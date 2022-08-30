@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ShoeDetailFragment">
+
+    <data>
+        <variable
+            name="shoeData"
+            type="com.example.shoestorerewrite.models.Shoe" />
+    </data>
+    <!-- Constraint layout to ensure rotation works and maintains relative position in view-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/shoeNameEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Shoe Name"
+            android:inputType="textPersonName"
+            android:textColorHint="#EC97B4"
+            android:text="@={shoeData.name}"
+            app:layout_constraintBottom_toTopOf="@+id/shoeBrandEdit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/shoeBrandEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Brand"
+            android:inputType="textPersonName"
+            android:textColorHint="#EC97B4"
+            android:text="@={shoeData.company}"
+            app:layout_constraintBottom_toTopOf="@+id/shoeSizeEdit"
+            app:layout_constraintStart_toStartOf="@+id/shoeNameEdit"
+            app:layout_constraintTop_toBottomOf="@+id/shoeNameEdit" />
+
+        <EditText
+            android:id="@+id/shoeSizeEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Size(#)"
+            android:inputType="number"
+            android:textColorHint="#EC97B4"
+            android:text="@={`` + shoeData.size}"
+            app:layout_constraintBottom_toTopOf="@+id/shoeDescEdit"
+            app:layout_constraintStart_toStartOf="@+id/shoeNameEdit"
+            app:layout_constraintTop_toBottomOf="@+id/shoeBrandEdit" />
+
+        <EditText
+            android:id="@+id/shoeDescEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:textColorHint="#EC97B4"
+            android:text="@={shoeData.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/shoeNameEdit"
+            app:layout_constraintTop_toBottomOf="@+id/shoeSizeEdit" />
+
+        <Button
+            android:id="@+id/shoeSaveBttn"
+            style="@style/fwdButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.85" />
+
+        <Button
+            android:id="@+id/shoeCancelBttn"
+            style="@style/backButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:text="cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.85" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">The Shoe Store</string>
+    <string name="login_email_txt">Email:</string>
+    <string name="login_pw_txt">Password:</string>
+    <string name="login_txt_header">Shoe Store Login</string>
+    <string name="login_button_txt">Login</string>
+    <string name="welcome_txt">Welcome to the Shoe Store</string>
+    <string name="welcome_txt2">Not sure what this text is supposed to represent due to incredibly limited instructions. So this is entirely superfluous</string>
+    <string name="toInstrButtonlabel">CONTINUE</string>
+    <string name="instructions_header_txt">Shoe Store Instructions</string>
+    <string name="instructions_txt">The Shoe Store application will initially show you a list of shoes if any exist. Clicking the floating Action button will navigate you to the Shoe Detail screen. Within the shoe detail screen you may add new shoes by entering the Shoe Name, Company, Shoe Size, and Description and clicking save. The new shoe should be visible within the shoe list after saving.</string>
+    <string name="to_ShoeList_bttn_txt">CONTINUE</string>
+    <string name="reg_button_txt">Register</string>
+</resources>

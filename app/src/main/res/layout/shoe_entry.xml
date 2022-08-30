@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.shoes.ShoeListFragment">
+
+    <data>
+        <variable
+            name="shoeData"
+            type="com.example.shoestorerewrite.models.Shoe" />
+    </data>
+    <!-- Constraint layout to ensure rotation works and maintains relative position in view-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/shoe_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shoe_entry_border">
+
+        <TextView
+            android:id="@+id/shoeNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/shoeBrandLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeNameLabel" />
+
+        <TextView
+            android:id="@+id/shoeSizeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeBrandLabel" />
+
+        <TextView
+            android:id="@+id/shoeDescLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desc:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeSizeLabel" />
+
+        <TextView
+            android:id="@+id/shoeNameDataTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{shoeData.name}"
+            app:layout_constraintStart_toEndOf="@+id/shoeNameLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/shoeBrandDataTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{shoeData.company}"
+            app:layout_constraintStart_toEndOf="@+id/shoeBrandLabel"
+            app:layout_constraintTop_toBottomOf="@+id/shoeNameDataTxt" />
+
+        <TextView
+            android:id="@+id/shoeSizeDataTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(shoeData.size)}"
+            app:layout_constraintStart_toEndOf="@+id/shoeSizeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/shoeBrandDataTxt" />
+
+        <TextView
+            android:id="@+id/shoeDescDataTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{shoeData.description}"
+            app:layout_constraintStart_toEndOf="@+id/shoeDescLabel"
+            app:layout_constraintTop_toBottomOf="@+id/shoeSizeDataTxt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
